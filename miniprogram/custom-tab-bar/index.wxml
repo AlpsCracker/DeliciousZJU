@@ -1,0 +1,10 @@
+<!--
+  自定义tabbar的代码
+  每个新界面都要在onshow()函数
+      this.getTabBar().init();
+-->
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item wx:for="{{ list }}" wx:key="index" icon="{{ item.icon }}"  >
+    {{item.text}}
+  </van-tabbar-item>
+</van-tabbar>

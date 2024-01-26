@@ -1,0 +1,10 @@
+<!--pages/score/score.wxml-->
+<van-sidebar active-key="{{ activeKey }}">
+  <van-sidebar-item title="玉湖餐厅">内容1</van-sidebar-item>
+  <van-sidebar-item title="澄月餐厅">内容2</van-sidebar-item>
+  <van-sidebar-item title="银泉餐厅">内容3</van-sidebar-item>
+  <van-sidebar-item title="东区大食堂">内容4</van-sidebar-item>
+  <van-sidebar-item title="麦香餐厅">内容5</van-sidebar-item>
+  <van-sidebar-item title="麦斯威餐厅">内容6</van-sidebar-item>
+  <van-sidebar-item title="临湖餐厅">内容7</van-sidebar-item>
+</van-sidebar>
