@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    activeKey:0,
+    activeKey: 0,
   },
-
+  onChange: function (event) {
+    this.setData({
+      activeKey: event.detail
+    })
+    console.log(this.activeKey)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
