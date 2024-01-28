@@ -1,0 +1,71 @@
+/* components/Recommendation/recommendation.wxss */
+.Card {
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  margin: 2%;
+  margin-bottom: 10%;
+  border-radius: 10px;
+  background-color: white;
+  padding: 2vw;
+}
+.NameAndImage
+{
+  display: flexbox;
+}
+.RecommendedDish {
+  width: 65px;
+  height: 65px;
+  border-radius: 30%;
+  /* 将边框半径设置为元素宽度和高度的一半，实现圆形效果 */
+  overflow: hidden;
+  /* 隐藏溢出部分，确保裁切成圆形 */
+}
+.Name
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中 */
+  justify-content: center; /* 垂直居中 */
+  margin-bottom: 1vh;
+}
+.DishName
+{
+  font-size: 15px;
+  margin-bottom: 5px;
+  display: block;
+  align-items: center;
+}
+.CanteenName
+{
+  font-size: 12px;
+  display: block;
+  align-items: center;
+  color: #89909f;
+}
+.Score
+{
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* 如果需要水平对齐文本内容 */
+}
+.ScoreValue
+{
+  color:#00a4b8;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+.ScoreNumber
+{
+  font-size: 8px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  color: #89909f;
+}

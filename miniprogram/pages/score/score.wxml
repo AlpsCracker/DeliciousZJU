@@ -1,6 +1,6 @@
 <!--pages/score/score.wxml-->
 <van-row>
-  <van-col span="6">
+  <van-col span="5">
     <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
       <van-sidebar-item title="玉湖餐厅"></van-sidebar-item>
       <van-sidebar-item title="澄月餐厅"></van-sidebar-item>
@@ -11,9 +11,12 @@
       <van-sidebar-item title="临湖餐厅"></van-sidebar-item>
     </van-sidebar>
   </van-col>
-  <van-col offset="2" span="16">
-    <view>
-      {{activeKey}}
+  <van-col span="19">
+    <view class="Container">
+     <dishItem class="Item"></dishItem>
+     <dishItem class="Item"></dishItem>
+     <dishItem class="Item"></dishItem>
+     <dishItem class="Item"></dishItem>
     </view>
   </van-col>
 </van-row>

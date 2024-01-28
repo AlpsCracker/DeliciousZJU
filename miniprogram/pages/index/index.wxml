@@ -1,3 +1,7 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
-<van-button type="default" bind:click="onclick">跳转Test</van-button>
+<view style="display: flexbox;">
+  <recommendation></recommendation>
+  <recommendation></recommendation>
+  <recommendation></recommendation>
+  <recommendation></recommendation>
+</view>

@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "recommendation" :"/components/recommendation/recommendation"
+  }
 }

@@ -13,7 +13,8 @@ App({
         traceUser: true,
       });
     }
-
-    this.globalData = {};
-  }
+  },
+  globalData: {
+    AvatarUrl: "/images/avatar.jpg",
+  },
 });

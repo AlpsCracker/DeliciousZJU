@@ -6,12 +6,19 @@ Page({
    */
   data: {
     active : 1,
+    activeKey: 0,
   },
   onChange(event) {
     wx.showToast({
       title: `切换到标签 ${event.detail.name}`,
       icon: 'none',
     });
+  },
+  onChange2: function (event) {
+    this.setData({
+      activeKey: event.detail
+    })
+    console.log(this.activeKey)
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "dishItem" :"/components/dishItem/dishItem",
+    "recommendation" :"/components/recommendation/recommendation",
+    "takeawayRequest":"/components/takeawayRequest/takeawayRequest"
+  }
 }

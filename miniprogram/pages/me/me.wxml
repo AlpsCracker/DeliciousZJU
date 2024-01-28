@@ -1,2 +1,20 @@
 <!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<view class="UserInformation" bind:tap="changeUserInformtion">
+  <image class="UserAvatar" src="{{UserAvatarUrl}}" />
+  <!--van-image显示会有问题,此处使用image-->
+  <view class="UserNickname">{{UserName}}</view>
+</view>
+<view class="Functions">
+  <view id="ScoreRecords" class="FunctionBlock">我的评分记录</view>
+  <view id="Collections" class="FunctionBlock">我的收藏</view>
+  <view id="Feedback" class="FunctionBlock">我的反馈</view>
+  <view id="Takeaway" class="FunctionBlock">我的带饭</view>
+  <view id="Information" class="FunctionBlock">我的信息</view>
+</view>
+<van-popup class="Popup" round safe-area-tab-bar show = "{{ show }}" position="bottom" bind:close="onClose">
+  <view class="ChangeUserInformation">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">修改头像
+    </button>
+    <input type="nickname" class="weui-input" placeholder="请输入新的昵称" />
+  </view>
+</van-popup>

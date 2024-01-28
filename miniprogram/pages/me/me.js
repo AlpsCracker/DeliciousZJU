@@ -1,18 +1,38 @@
 // pages/me/me.js
+const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
+  
   data: {
-
+    UserAvatarUrl:"https://img.yzcdn.cn/vant/cat.jpeg",
+    UserName:"微信用户",
+    show: false
+  },
+  showPopup() {
+    this.setData({ show: true });
   },
 
+  onClose() {
+    this.setData({ show: false });
+  },
+  changeUserInformtion(e)
+  {
+    this.setData({ show: true });
+  },
+  onChooseAvatar(e) {
+    const {avatarUrl} = e.detail 
+    this.setData({
+      avatarUrl,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
   },
 
   /**

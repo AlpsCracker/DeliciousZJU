@@ -1,1 +1,12 @@
 /* pages/takeaway/takeaway.wxss */
+.Container
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5%;
+}
+.item
+{
+  flex-basis: 50%;
+}
