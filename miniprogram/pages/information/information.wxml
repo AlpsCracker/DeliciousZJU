@@ -1,0 +1,7 @@
+<!--pages/information/information.wxml-->
+<image class="Avatar" src="/images/avatar.jpg" />
+<van-cell-group inset>
+  <van-cell title="昵称" value="内容"/>
+  <van-cell title="微信号" value="内容" />
+  <van-cell title="地址" value="内容"/>
+</van-cell-group>

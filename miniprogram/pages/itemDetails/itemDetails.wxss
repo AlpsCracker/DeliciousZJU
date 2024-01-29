@@ -1,0 +1,73 @@
+/* pages/itemDetails/itemDetails.wxss */
+.Title
+{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 5%;
+  margin-bottom: 2%;
+}
+.Icons
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 15%;
+}
+van-icon
+{
+  margin: 20%;
+}
+.DishImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 30%;
+  overflow: hidden;
+  margin-right: 10%;
+}
+.DishName
+{
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+.CanteenName
+{
+  font-size: 15px;
+  display: block;
+  align-items: center;
+  color: #89909f;
+}
+.ScoreNumber
+{
+  font-size: 15px;
+  display: block;
+  align-items: center;
+  color: #89909f;
+}
+.Score
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  margin: 2%;
+  border-radius: 10px;
+  background-color: white;
+  padding: 3vw;
+}
+.ScoreValue
+{
+  color:#00a4b8;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MyRate
+{
+  margin-left: 25%;
+}

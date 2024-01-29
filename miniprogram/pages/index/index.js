@@ -12,6 +12,42 @@ Page({
       url: '/pages/test/testpage',
     });
   },
+  ChangePage1: function (e) {
+    wx.navigateTo({
+      url: '/pages/itemDetails/itemDetails',
+    });
+  },
+  ChangePage2: function (e) {
+    wx.navigateTo({
+      url: '/pages/takeawayDetails/takeawayDetails',
+    });
+  },
+
+  ChangePage3: function (e) {
+    wx.navigateTo({
+      url: '/pages/scoreRecords/scoreRecords',
+    });
+  },
+  ChangePage4: function (e) {
+    wx.navigateTo({
+      url: '/pages/information/information',
+    });
+  },
+  ChangePage5: function (e) {
+    wx.navigateTo({
+      url: '/pages/favorites/favorites',
+    });
+  },
+  ChangePage6: function (e) {
+    wx.navigateTo({
+      url: '/pages/myTakeaway/myTakeaway',
+    });
+  },
+  ChangePage7: function (e) {
+    wx.navigateTo({
+      url: '/pages/feedback/feedback',
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

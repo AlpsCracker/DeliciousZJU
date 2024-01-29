@@ -1,0 +1,11 @@
+<!--pages/myTakeaway/myTakeaway.wxml-->
+<view class="MyTitle">
+<h1>我帮带的饭</h1>
+</view>
+<takeawayRequest/>
+<takeawayRequest/>
+<view class="MyTitle">
+<h1>我的带饭请求</h1>
+</view>
+<takeawayRequest/>
+<takeawayRequest/>

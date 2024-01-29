@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "takeawayRequest":"/components/takeawayRequest/takeawayRequest"
+  }
+}

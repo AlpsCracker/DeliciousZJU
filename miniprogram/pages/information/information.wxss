@@ -1,0 +1,11 @@
+/* pages/information/information.wxss */
+.Avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 30%;
+  margin-top: 5%;
+  margin-left: 4%;
+  margin-bottom: 5%;
+  overflow: hidden;
+  /* 隐藏溢出部分，确保裁切成圆形 */
+}

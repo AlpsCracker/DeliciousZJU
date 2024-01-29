@@ -6,7 +6,7 @@
     </van-col>
     <van-col span="10">
       <view class="Name">
-        <text class="DishName">松鼠鱼</text>
+        <text class="DishName">宫保鸡丁</text>
         <text class="CanteenName">玉湖食堂</text>
       </view>
     </van-col>

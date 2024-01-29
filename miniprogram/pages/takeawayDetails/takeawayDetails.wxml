@@ -1,0 +1,13 @@
+<!--pages/takeawayDetails/takeawayDetails.wxml-->
+<takeawayRequest/>
+<van-cell-group inset>
+  <van-cell title="地址" value="玉湖7幢330" />
+  <van-cell title="微信号" value="AlvinLiu" />
+  <van-cell title="备注" value="加一点葱花" />
+  <van-cell title="份数" value="1" />
+  <van-cell title="当前状态" value="已完成" />
+</van-cell-group>
+<view class="MyButton">
+<van-button type="default" disabled>我要接单</van-button>
+</view>
+

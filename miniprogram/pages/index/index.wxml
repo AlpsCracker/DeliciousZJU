@@ -1,5 +1,12 @@
 <!--pages/index/index.wxml-->
 <view style="display: flexbox;">
+<button bind:tap="ChangePage1">itemDetails</button>
+<button bind:tap="ChangePage2">takeawayDetails</button>
+<button bind:tap="ChangePage3">ScoreRecords</button>
+<button bind:tap="ChangePage4">Information</button>
+<button bind:tap="ChangePage5">Favorites</button>
+<button bind:tap="ChangePage6">MyTakeaway</button>
+<button bind:tap="ChangePage7">feedback</button>
   <recommendation></recommendation>
   <recommendation></recommendation>
   <recommendation></recommendation>

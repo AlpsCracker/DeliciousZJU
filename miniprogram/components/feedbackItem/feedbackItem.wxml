@@ -1,0 +1,11 @@
+<!--components/feedbackItem/feedbackItem.wxml-->
+<view class="Card">
+  <van-cell-group inset>
+    <van-cell title="食堂" value="玉湖餐厅" />
+    <van-cell title="菜品" value="松鼠鱼" />
+    <van-cell title="内容" value="内容内容内容内容内容内容内容内容内容内容内容内容内容" />
+    <van-cell title="状态" value="已处理" />
+    <van-cell title="回复" value="内容内容内容内容内容内容内容内容内容内容内容内容内容" />
+  </van-cell-group>
+  <van-divider />
+</view>

@@ -4,31 +4,32 @@
   display: flexbox;
   align-items: center;
   justify-content: center;
-  width: 80vw;
+  width: 84vw;
   margin: 5%;
   border-radius: 10px;
   background-color: white;
   padding: 3vw;
 }
-.NameAndImage
+.Container
 {
-  display: flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .RecommendedDish {
   width: 100px;
   height: 100px;
   border-radius: 30%;
-  /* 将边框半径设置为元素宽度和高度的一半，实现圆形效果 */
   overflow: hidden;
-  /* 隐藏溢出部分，确保裁切成圆形 */
 }
 .Name
 {
-  margin-top: 25%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 水平居中 */
-  justify-content: center; /* 垂直居中 */
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 30%;
 }
 .DishName
 {
@@ -46,7 +47,7 @@
 }
 .Score
 {
-  display: flexbox;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -56,10 +57,7 @@
 {
   color:#00a4b8;
   font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25%;
+  margin-bottom: 20%;
 }
 .ScoreNumber
 {
@@ -69,19 +67,13 @@
   white-space: nowrap;
   color: #89909f;
 }
-.ArrowContainer
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40%;
-}
+
 .Arrow
 {
-  font-size: 15px;
+  font-size: 20px;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
   color: #89909f;
-  margin-top: 30%;
+  margin-top: 60%;
 }

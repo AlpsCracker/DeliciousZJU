@@ -1,0 +1,24 @@
+<!--pages/itemDetails/itemDetails.wxml-->
+<view class="Title">
+  <image class="DishImage" src="/images/avatar.jpg"></image>
+  <view class="container">
+    <text class="DishName">松鼠鱼</text>
+    <text class="CanteenName">玉湖食堂</text>
+  </view>
+  <view class="Icons">
+    <van-icon size="25px" name="like" />
+    <van-icon size="25px"name="comment" />
+  </view>
+</view>
+<view class="Score">
+  <view class="container">
+  <text class="ScoreValue">4.7</text>
+  <text class="ScoreNumber">50条评分</text>
+</view>
+  <van-rate class="MyRate" value="5" bind:change="onChange" />
+  
+</view>
+<comment />
+<comment />
+<comment />
+<comment />

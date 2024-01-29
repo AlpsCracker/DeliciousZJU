@@ -1,0 +1,18 @@
+/* pages/myTakeaway/myTakeaway.wxss */
+h1{
+  font-size: 22px;
+  display: flex;
+  align-self:center;
+  justify-content: center;
+}
+.MyTitle
+{
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  margin: 5%;
+  border-radius: 10px;
+  background-color: white;
+  padding: 3vw;
+}

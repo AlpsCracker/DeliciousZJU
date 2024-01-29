@@ -1,0 +1,62 @@
+/* components/comment/comment.wxss *//* components/Recommendation/recommendation.wxss */
+.Card {
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  width: 84vw;
+  margin: 5%;
+  border-radius: 10px;
+  background-color: white;
+  padding: 3vw;
+}
+.NameAndImage
+{
+  display: flexbox;
+}
+.UserInformation
+{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.UserAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  overflow: hidden;
+  margin-bottom: 5%;
+}
+.UserName
+{
+  font-size: 15px;
+  display: block;
+  align-items: center;
+  color: #89909f;
+  margin-bottom: 5%;
+}
+.Comment
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15%;
+  margin-bottom:5%;
+}
+.CommentContent
+{
+  font-size: 15px;
+}
+.ThumbUp
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60%;
+  flex-direction: column;
+}
+.ThumbNumber
+{
+  color:#89909f;
+}
