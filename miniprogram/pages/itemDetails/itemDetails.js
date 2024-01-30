@@ -1,13 +1,44 @@
 // pages/itemDetails/itemDetails.js
+import Toast from '@vant/weapp/toast/toast';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    likeState: false,
+    likeColor: "#C0C0C0",
+    show: false,
   },
-
+  showPopup() {
+    this.setData({ show: true });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+  changeLike: function(e) {
+    if (this.data.likeState == false) {
+      this.setData({
+        likeState: true,
+        likeColor: "red",
+      });
+      Toast.success('喜欢成功');
+    } else {
+      this.setData({
+        likeState: false,
+        likeColor: "#C0C0C0",
+      });
+      Toast.success('取消喜欢成功');
+    }
+  },
+  toDetail: function(e)
+  {
+    this.showPopup();
+  },
+  onChange: function(event)
+  {
+    Toast.success('评分成功');
+  },
   /**
    * 生命周期函数--监听页面加载
    */

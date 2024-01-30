@@ -4,4 +4,8 @@
   <van-cell title="昵称" value="内容"/>
   <van-cell title="微信号" value="内容" />
   <van-cell title="地址" value="内容"/>
+  <van-cell title="电话" value="内容"/>
 </van-cell-group>
+<view class="MyButton">
+  <van-button type="default" bind:tap="toChange">修改个人信息</van-button>
+</view>

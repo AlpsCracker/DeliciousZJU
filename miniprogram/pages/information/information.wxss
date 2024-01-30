@@ -9,3 +9,10 @@
   overflow: hidden;
   /* 隐藏溢出部分，确保裁切成圆形 */
 }
+.MyButton
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
+}

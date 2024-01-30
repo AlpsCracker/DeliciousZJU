@@ -1,5 +1,5 @@
 <!--components/takeawayRequest/takeawayRequest.wxml-->
-<view class="Card">
+<view class="Card" bind:tap="toDetail">
   <van-row class="NameAndImage">
     <van-col span="8">
       <view class="Container">

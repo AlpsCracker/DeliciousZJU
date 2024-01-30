@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "comment" :"/components/comment/comment"
+    "comment" :"/components/comment/comment",
+    "writeComment" :"/components/writeComment/writeComment",
+    "sendFeedback":"/components/sendFeedback/sendFeedback"
   }
 }

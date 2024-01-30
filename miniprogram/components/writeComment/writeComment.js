@@ -1,4 +1,5 @@
-// components/Recommendation/recommendation.js
+// components/writeComment/writeComment.js
+import Toast from '@vant/weapp/toast/toast';
 Component({
 
   /**
@@ -19,12 +20,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    toDetail: function(e)
+    onChange: function(event)
     {
-      wx.navigateTo({
-        url: '/pages/itemDetails/itemDetails',
-      })
+      Toast.success('评分成功');
     },
-
   }
 })

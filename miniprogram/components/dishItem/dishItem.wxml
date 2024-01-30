@@ -1,5 +1,5 @@
 <!--components/dishItem/dishItem.wxml-->
-<view class="Card">
+<view class="Card" bind:tap="toDetail">
   <view class="Name">
     <text class="DishName">松鼠鱼</text>
   </view>

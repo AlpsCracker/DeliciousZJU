@@ -9,10 +9,6 @@ Page({
     activeKey: 0,
   },
   onChange(event) {
-    wx.showToast({
-      title: `切换到标签 ${event.detail.name}`,
-      icon: 'none',
-    });
   },
   onChange2: function (event) {
     this.setData({

@@ -1,4 +1,9 @@
 /* pages/itemDetails/itemDetails.wxss */
+.PageContent
+{
+  margin-bottom: 30%;
+}
+/* 防遮挡 */
 .Title
 {
   background-color: white;
@@ -8,6 +13,12 @@
   flex-direction: row;
   padding: 5%;
   margin-bottom: 2%;
+}
+.fixed-bottom {
+  position: fixed; /* 使用 fixed 定位 */
+  bottom: 0; /* 底部对齐 */
+  left: 0; /* 左边对齐，确保宽度为100% */
+  width: 100%; /* 横跨整个屏幕宽度 */
 }
 .Icons
 {

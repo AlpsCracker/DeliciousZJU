@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/changeInformation/changeInformation.js
 Page({
 
   /**
@@ -7,20 +7,10 @@ Page({
   data: {
 
   },
-  onclick: function (e) {
-    wx.navigateTo({
-      url: '/pages/test/testpage',
-    });
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onSearch: function(e)
-  {
-    wx.navigateTo({
-      url: '/pages/searchResult/searchResult',
-    });
-  },
   onLoad(options) {
 
   },
@@ -36,7 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.getTabBar().init();
+
   },
 
   /**

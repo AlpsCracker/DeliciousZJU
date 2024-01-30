@@ -1,0 +1,23 @@
+<!--pages/takeawayRequestDetails/takeawayRequestDetails.wxml-->
+<recommendation />
+<van-cell-group inset>
+  <van-cell title="微信号" value="内容" />
+  <van-cell title="地址" value="内容" />
+  <van-cell title="电话" value="内容" />
+</van-cell-group>
+<van-divider />
+<view class="Card">
+  <text style="font-size: 14px; font-weight: 350; margin-left: 1%;">份数</text>
+  <van-stepper value="{{ 1 }}" bind:change="onChange1" integer />
+</view>
+<view class="Card">
+  <text style="font-size: 14px; font-weight: 350; margin-left: 1%;">备注</text>
+  <van-field value="{{ value }}" placeholder="请输入备注" border="{{ false }}" bind:change="onChange2" />
+</view>
+<view class="Card">
+  <text style="font-size: 14px; font-weight: 350; margin-left: 1%;">期望时间</text>
+  <van-field value="{{ value }}" placeholder="请输入期望时间" border="{{ false }}" bind:change="onChange3" />
+</view>
+<view class="MyButton">
+  <van-button type="default">发送</van-button>
+</view>

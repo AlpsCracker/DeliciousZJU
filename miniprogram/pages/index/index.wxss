@@ -1,1 +1,23 @@
 /* pages/index/index.wxss */
+.Table {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 10px;
+  background: linear-gradient(#00bad39a,#00bad307);
+  margin-bottom: 5%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 5%;
+}
+.MyText
+{
+  margin-top: 5%;
+}
+.TitleText {
+  font-size: 25px;
+  color: white;
+  margin-top: 5%;
+  margin-left:6%;
+  font-weight: 550;
+}

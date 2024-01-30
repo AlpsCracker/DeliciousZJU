@@ -1,24 +1,31 @@
 <!--pages/itemDetails/itemDetails.wxml-->
-<view class="Title">
-  <image class="DishImage" src="/images/avatar.jpg"></image>
-  <view class="container">
-    <text class="DishName">松鼠鱼</text>
-    <text class="CanteenName">玉湖食堂</text>
+<view class="PageContent">
+  <view class="Title">
+    <van-toast id="van-toast" />
+    <image class="DishImage" src="/images/avatar.jpg"></image>
+    <view class="container">
+      <text class="DishName">松鼠鱼</text>
+      <text class="CanteenName">玉湖食堂</text>
+    </view>
+    <view class="Icons">
+      <van-icon size="25px" color="{{likeColor}}" name="like" bind:tap="changeLike" />
+      <van-icon size="25px" color="#C0C0C0" name="comment" bind:tap="showPopup" />
+    </view>
   </view>
-  <view class="Icons">
-    <van-icon size="25px" name="like" />
-    <van-icon size="25px"name="comment" />
+  <view class="Score">
+    <view class="container">
+      <text class="ScoreValue">4.7</text>
+      <text class="ScoreNumber">50条评分</text>
+    </view>
+    <van-rate class="MyRate" value="5" readonly/>
+
   </view>
+  <writeComment />
+  <comment />
+  <comment />
+  <comment />
+  <comment />
 </view>
-<view class="Score">
-  <view class="container">
-  <text class="ScoreValue">4.7</text>
-  <text class="ScoreNumber">50条评分</text>
-</view>
-  <van-rate class="MyRate" value="5" bind:change="onChange" />
-  
-</view>
-<comment />
-<comment />
-<comment />
-<comment />
+<van-popup show="{{ show }}"position="bottom" custom-style="height: 20%" bind:close="onClose">
+<sendFeedback/>
+</van-popup>

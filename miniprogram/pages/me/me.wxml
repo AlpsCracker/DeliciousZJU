@@ -1,20 +1,21 @@
 <!--pages/me/me.wxml-->
-<view class="UserInformation" bind:tap="changeUserInformtion">
+<view class="UserInformation">
   <image class="UserAvatar" src="{{UserAvatarUrl}}" />
   <!--van-image显示会有问题,此处使用image-->
   <view class="UserNickname">{{UserName}}</view>
 </view>
-<view class="Functions">
-  <view id="ScoreRecords" class="FunctionBlock">我的评分记录</view>
-  <view id="Collections" class="FunctionBlock">我的收藏</view>
-  <view id="Feedback" class="FunctionBlock">我的反馈</view>
-  <view id="Takeaway" class="FunctionBlock">我的带饭</view>
-  <view id="Information" class="FunctionBlock">我的信息</view>
-</view>
-<van-popup class="Popup" round safe-area-tab-bar show = "{{ show }}" position="bottom" bind:close="onClose">
-  <view class="ChangeUserInformation">
-    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">修改头像
-    </button>
-    <input type="nickname" class="weui-input" placeholder="请输入新的昵称" />
-  </view>
-</van-popup>
+<!-- <view class="Functions">
+  <view id="ScoreRecords" class="FunctionBlock" bind:tap="toScoreRecords">我的评分记录</view>
+  <view id="Collections" class="FunctionBlock" bind:tap="toFavorites">我的收藏</view>
+  <view id="Feedback" class="FunctionBlock" bind:tap="toFeedback">我的反馈</view>
+  <view id="Takeaway" class="FunctionBlock" bind:tap="toMyTakeaway">我的带饭</view>
+  <view id="Information" class="FunctionBlock" bind:tap="toInformation">我的信息</view>
+</view> -->
+<van-grid column-num="2">
+  <van-grid-item icon="records-o" text="评分记录" bind:tap="toScoreRecords"/>
+  <van-grid-item icon="bag-o" text="带饭记录" bind:tap="toMyTakeaway"/>
+  <van-grid-item icon="like-o" text="我的收藏" bind:tap="toFavorites"/>
+  <van-grid-item icon="chat-o" text="我的反馈" bind:tap="toFeedback"/>
+  <van-grid-item icon="good-job-o" text="我的点赞" bind:tap="toThumbs"/>
+  <van-grid-item icon="info-o" text="我的信息" bind:tap="toInformation"/>
+</van-grid>

@@ -1,11 +1,27 @@
 <!--pages/myTakeaway/myTakeaway.wxml-->
-<view class="MyTitle">
-<h1>我帮带的饭</h1>
+<view style="display: flexbox; margin-bottom: 20%;">
+  <view class="Title">
+    <view class="MyText">
+      <text class="TitleText">我帮忙带的饭</text>
+    </view>
+    <view class="Cards">
+      <takeawayRequest/>
+      <takeawayRequest/>
+      <takeawayRequest/>
+      <takeawayRequest/>
+    </view>
+  </view>
+
+  <view class="Title">
+    <view class="MyText">
+      <text class="TitleText">我的带饭请求</text>
+    </view>
+    <view class="Cards">
+      <takeawayRequest/>
+      <takeawayRequest/>
+      <takeawayRequest/>
+      <takeawayRequest/>
+    </view>
+  </view>
+
 </view>
-<takeawayRequest/>
-<takeawayRequest/>
-<view class="MyTitle">
-<h1>我的带饭请求</h1>
-</view>
-<takeawayRequest/>
-<takeawayRequest/>

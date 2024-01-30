@@ -1,0 +1,20 @@
+/* pages/takeawayRequestDetails/takeawayRequestDetails.wxss */
+.Card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 86vw;
+  margin-left: 4%;
+  margin-right: 4%;
+  border-radius: 5px;
+  background-color: white;
+  padding: 3vw;
+}
+.MyButton
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
+}

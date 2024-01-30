@@ -19,6 +19,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    toDetail: function(e)
+    {
+      wx.navigateTo({
+        url: '/pages/takeawayDetails/takeawayDetails',
+      })
+    },
   }
 })

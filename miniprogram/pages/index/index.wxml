@@ -1,14 +1,29 @@
 <!--pages/index/index.wxml-->
-<view style="display: flexbox;">
-<button bind:tap="ChangePage1">itemDetails</button>
-<button bind:tap="ChangePage2">takeawayDetails</button>
-<button bind:tap="ChangePage3">ScoreRecords</button>
-<button bind:tap="ChangePage4">Information</button>
-<button bind:tap="ChangePage5">Favorites</button>
-<button bind:tap="ChangePage6">MyTakeaway</button>
-<button bind:tap="ChangePage7">feedback</button>
-  <recommendation></recommendation>
-  <recommendation></recommendation>
-  <recommendation></recommendation>
-  <recommendation></recommendation>
+<van-search value="{{ value }}" input-align="center" placeholder="搜索菜品"  bind:search="onSearch"/>
+
+<view style="display: flexbox; margin-bottom: 20%;">
+  <view class="Table">
+    <view class="MyText">
+      <text class="TitleText">新品上市</text>
+    </view>
+    <view class="Cards">
+      <recommendation></recommendation>
+      <recommendation></recommendation>
+      <recommendation></recommendation>
+      <recommendation></recommendation>
+      <recommendation></recommendation>
+      <recommendation></recommendation>
+    </view>
+  </view>
+
+  <view class="Table">
+    <view class="MyText">
+      <text class="TitleText">热门评分</text>
+    </view>
+    <view class="Cards">
+      <recommendation></recommendation>
+      <recommendation></recommendation>
+    </view>
+  </view>
+
 </view>

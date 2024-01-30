@@ -4,14 +4,17 @@
     "pages/takeaway/takeaway",
     "pages/score/score",
     "pages/me/me",
-    "pages/test/testpage",
     "pages/itemDetails/itemDetails",
     "pages/takeawayDetails/takeawayDetails",
     "pages/scoreRecords/scoreRecords",
     "pages/feedback/feedback",
     "pages/myTakeaway/myTakeaway",
     "pages/information/information",
-    "pages/favorites/favorites"
+    "pages/favorites/favorites",
+    "pages/takeawayRequestDetails/takeawayRequestDetails",
+    "pages/changeInformation/changeInformation",
+    "pages/searchResult/searchResult",
+    "pages/thumbs/thumbs"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -59,7 +62,13 @@
     "van-icon":"@vant/weapp/icon/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-divider": "@vant/weapp/divider/index"
+    "van-divider": "@vant/weapp/divider/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index"
   },
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"

@@ -1,5 +1,5 @@
 <!--components/Recommendation/recommendation.wxml-->
-<view class="Card">
+<view class="Card" bind:tap="toDetail">
   <van-row class="NameAndImage">
     <van-col span="8">
       <image class="RecommendedDish" src="/images/avatar.jpg" />

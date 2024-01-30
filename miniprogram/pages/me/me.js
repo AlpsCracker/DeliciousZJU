@@ -15,7 +15,42 @@ Page({
   showPopup() {
     this.setData({ show: true });
   },
-
+  toScoreRecords: function(e)
+  {
+    wx.navigateTo({
+      url: '/pages/scoreRecords/scoreRecords',
+    });
+  },
+  toFavorites: function(e)
+  {
+    wx.navigateTo({
+      url: '/pages/favorites/favorites',
+    });
+  },
+  toFeedback: function(e)
+  {
+    wx.navigateTo({
+      url: '/pages/feedback/feedback',
+    });
+  },
+  toMyTakeaway: function(e)
+  {
+    wx.navigateTo({
+      url: '/pages/myTakeaway/myTakeaway',
+    });
+  },
+  toInformation: function(e)
+  {
+    wx.navigateTo({
+      url: '/pages/information/information',
+    });
+  },
+  toThumbs: function(e)
+  {
+    wx.navigateTo({
+      url: '/pages/thumbs/thumbs',
+    });
+  },
   onClose() {
     this.setData({ show: false });
   },
