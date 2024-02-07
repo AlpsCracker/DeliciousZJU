@@ -1,5 +1,6 @@
 <!--pages/thumbs/thumbs.wxml-->
-<comment/>
-<comment/>
-<comment/>
-<comment/>
+<view>
+  <block wx:for="{{thumbs}}" wx:key="index">
+    <comment uid="{{item.comment_id}}"></comment>
+  </block>
+</view>

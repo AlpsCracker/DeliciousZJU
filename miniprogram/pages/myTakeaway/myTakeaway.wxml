@@ -5,10 +5,9 @@
       <text class="TitleText">我帮忙带的饭</text>
     </view>
     <view class="Cards">
-      <takeawayRequest/>
-      <takeawayRequest/>
-      <takeawayRequest/>
-      <takeawayRequest/>
+      <block wx:for="{{receivedTakeaways}}" wx:key="_id">
+        <takeawayRequest sid="{{item._id}}"></takeawayRequest>
+      </block>
     </view>
   </view>
 
@@ -17,10 +16,9 @@
       <text class="TitleText">我的带饭请求</text>
     </view>
     <view class="Cards">
-      <takeawayRequest/>
-      <takeawayRequest/>
-      <takeawayRequest/>
-      <takeawayRequest/>
+      <block wx:for="{{myTakeaways}}" wx:key="_id">
+        <takeawayRequest sid="{{item._id}}"></takeawayRequest>
+      </block>
     </view>
   </view>
 

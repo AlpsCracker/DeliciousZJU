@@ -1,6 +1,7 @@
 // pages/itemDetails/itemDetails.js
 import Toast from '@vant/weapp/toast/toast';
 const db = wx.cloud.database()
+const app = getApp();
 Page({
 
   /**
@@ -17,7 +18,8 @@ Page({
     score: 0,
     scoreNumber: 0,
     rateValue: 0,
-    totalScore: 0
+    totalScore: 0,
+    commentList:[]
   },
   showPopup() {
     this.setData({
@@ -27,6 +29,22 @@ Page({
   onClose() {
     this.setData({
       show: false
+    });
+  },
+  fetchComment()
+  {
+
+    // 根据 openid 查询用户自己创建的反馈记录
+    wx.cloud.database().collection('comments').where({
+      tag: this.data.tag
+    }).get().then(res => {
+      const commentIds = res.data.map(item => item._id);
+      this.setData({
+      commentList: commentIds
+      });
+      console.log(this.data.commentList); // 查看获取的反馈列表
+    }).catch(err => {
+      console.error('查询评论记录失败', err);
     });
   },
   fetchData() {
@@ -57,19 +75,61 @@ Page({
       }
     });
   },
-  changeLike: function (e) {
-    if (this.data.likeState == false) {
-      this.setData({
-        likeState: true,
-        likeColor: "red",
-      });
-      Toast.success('喜欢成功');
+  async fetchLikeState() {
+    // 从likes集合中获取当前用户的点赞状态
+    try {
+      const res = await db.collection('likes').where({ 
+        tag: this.data.tag }).get();
+      if (res.data.length > 0) {
+        // 用户已点赞
+        this.setData({
+          likeState: true,
+          likeColor: "red",
+        });
+      } else {
+        // 用户未点赞
+        this.setData({
+          likeState: false,
+          likeColor: "#C0C0C0",
+        });
+      }
+    } catch (error) {
+      console.error("获取点赞状态失败", error);
+    }
+  },
+
+  async changeLike() {
+    if (this.data.likeState) {
+      // 如果当前是点赞状态，取消点赞
+      try {
+        await db.collection('likes').where({ tag: this.data.tag }).remove();
+        this.setData({
+          likeState: false,
+          likeColor: "#C0C0C0",
+        });
+        Toast.success("取消点赞成功!");
+      } catch (error) {
+        console.error("取消点赞失败", error);
+        Toast.fail("操作失败");
+      }
     } else {
-      this.setData({
-        likeState: false,
-        likeColor: "#C0C0C0",
-      });
-      Toast.success('取消喜欢成功');
+      // 如果当前未点赞，执行点赞
+      try {
+        await db.collection('likes').add({
+          data: {
+            openid: this.data.openid,
+            tag: this.data.tag
+          }
+        });
+        this.setData({
+          likeState: true,
+          likeColor: "red",
+        });
+        Toast.success("喜欢成功!");
+      } catch (error) {
+        console.error("喜欢失败", error);
+        Toast.fail("操作失败");
+      }
     }
   },
   toDetail: function (e) {
@@ -88,6 +148,8 @@ Page({
       })
     };
     this.fetchData()
+    this.fetchComment()
+    this.fetchLikeState()
   },
 
   /**

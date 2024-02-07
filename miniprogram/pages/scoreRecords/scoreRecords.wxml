@@ -1,5 +1,6 @@
 <!--pages/scoreRecords/scoreRecords.wxml-->
-<comment/>
-<comment/>
-<comment/>
-<comment/>
+<view>
+  <block wx:for="{{comments}}" wx:key="_id">
+    <comment uid="{{item._id}}"></comment>
+  </block>
+</view>

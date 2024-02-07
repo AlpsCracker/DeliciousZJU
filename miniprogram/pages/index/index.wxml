@@ -1,5 +1,5 @@
 <!--pages/index/index.wxml-->
-<van-search value="{{searchItem}}" input-align="center" placeholder="搜索菜品" bind:search="onSearch" />
+<van-search value="{{searchItem}}" input-align="center" placeholder="搜索菜品" bind:search="onSearch" bind:change="searchChange" />
 
 <view style="display: flexbox; margin-bottom: 20%;">
   <view class="Table">

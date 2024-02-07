@@ -3,21 +3,22 @@
   <van-row class="NameAndImage">
     <van-col span="6">
       <view class="UserInformation">
-        <image class="UserAvatar" src="/images/avatar.jpg" />
-        <text class="UserName">求是学子</text>
+        <image class="UserAvatar" src="{{AvatarUrl}}" />
+        <text class="UserName">{{UserName}}</text>
       </view>
     </van-col>
     <van-col span="11" offset="2">
       <view class="Comment">
-        <text class="CommentContent">这是玉湖食堂唯一真神.这是玉湖食堂唯一真神.这是玉湖食堂唯一真神.这是玉湖食堂唯一真神.</text>
+        <text class="CommentContent">{{content}}</text>
       </view>
     </van-col>
     <van-col span="3" offset="2">
       <view class="ThumbUp">
-        <van-icon name="arrow-up" class="MyIcon" color="{{ThumbColor}}" bind:tap="ChangeThumb" size="25px"/>
-        <text class="ThumbNumber">20</text>
+        <van-icon name="arrow-up" class="MyIcon" color="{{thumbColor}}" bind:tap="ChangeThumb" size="25px"/>
+        <text class="ThumbNumber">{{ThumbNumber}}</text>
       </view>
     </van-col>
   </van-row>
-  <van-rate class="MyRate" value="5" bind:change="onChange" readonly />
+  <van-rate class="MyRate" value="{{rateValue}}" bind:change="onChange" readonly />
 </view>
+<van-toast />

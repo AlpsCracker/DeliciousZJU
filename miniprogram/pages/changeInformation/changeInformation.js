@@ -42,39 +42,67 @@ Page({
     });
   },
   toSave: function (e) {
-    wx.cloud.callFunction({
-      name: 'updateOrCreateUser',
-      data: {
-        AvatarUrl: this.data.AvatarUrl,
-        UserName: this.data.UserName,
-        UserWechatNumber: this.data.UserWechatNumber,
-        UserAddress: this.data.UserAddress,
-        UserPhoneNumber: this.data.UserPhoneNumber
-      },
-      success: function (res) {
-        console.log(res.result.message);
-        Toast.success('保存成功');
-        app.globalData.AvatarUrl = this.data.AvatarUrl;
-        app.globalData.UserName = this.data.UserName;
-        app.globalData.UserWechatNumber = this.data.UserWechatNumber;
-        app.globalData.UserAddress = this.data.UserAddress;
-        app.globalData.UserPhoneNumber = this.data.UserPhoneNumber;
-        // 设置延迟两秒后执行页面跳转
-        setTimeout(function () {
-          wx.navigateTo({
-            url: '/pages/information/information',
-          });
-        }, 1200); // 2000 毫秒等于两秒
-      },
-      fail: function (err) {
-        console.error(err);
-      }
-    });
-
+    console.log(this.data)
+    this.updateOrCreateUser()
   },
   /**
    * 生命周期函数--监听页面加载
    */
+  updateOrCreateUser: function () {
+    const db = wx.cloud.database();
+    const userCollection = db.collection('user');
+    // 获取用户的 openid，需要确保在 app.js 中已经调用过 wx.cloud.init
+    const openid = app.globalData.openid; // 假设你已经在登录时将用户的 openid 保存到全局变量中
+    const {
+      AvatarUrl,
+      UserName,
+      UserWechatNumber,
+      UserAddress,
+      UserPhoneNumber
+    } = this.data;
+
+    // 检查用户是否存在
+    userCollection.where({
+      _openid: openid
+    }).get().then(res => {
+      if (res.data.length > 0) {
+        // 用户已存在，更新数据
+        userCollection.where({
+          _openid: openid
+        }).update({
+          data: {
+            AvatarUrl,
+            UserName,
+            UserWechatNumber,
+            UserAddress,
+            UserPhoneNumber
+          }
+        }).then(() => {
+          Toast.success('信息更新成功,重新进入小程序后生效!');
+        }).catch(err => {
+          console.error('更新失败', err);
+        });
+      } else {
+        // 用户不存在，创建新记录
+        userCollection.add({
+          data: {
+            _openid: openid, // 注意：直接在小程序端操作数据库时，可能不需要手动设置 _openid，因为它会自动添加
+            AvatarUrl,
+            UserName,
+            UserWechatNumber,
+            UserAddress,
+            UserPhoneNumber
+          }
+        }).then(() => {
+          Toast.success('用户创建成功,重新进入小程序后生效!');
+        }).catch(err => {
+          console.error('创建失败', err);
+        });
+      }
+    }).catch(err => {
+      console.error('查询失败', err);
+    });
+  },
   onLoad(options) {
     this.setData({
       AvatarUrl: app.globalData.AvatarUrl,

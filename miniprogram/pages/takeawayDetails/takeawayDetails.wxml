@@ -1,14 +1,16 @@
 <!--pages/takeawayDetails/takeawayDetails.wxml-->
-<takeawayRequest/>
+<takeawayRequest wx:if="{{sid}}" sid="{{sid}}"/>
 <van-cell-group inset>
-  <van-cell title="地址" value="玉湖7幢330" />
-  <van-cell title="微信号" value="AlvinLiu" />
-  <van-cell title="电话" value="18888888888" />
-  <van-cell title="备注" value="加一点葱花" />
-  <van-cell title="份数" value="1" />
-  <van-cell title="当前状态" value="已完成" />
+  <van-cell title="昵称" value="{{UserName}}" />
+  <van-cell title="地址" value="{{UserAddress}}" />
+  <van-cell title="微信号" value="{{UserWechatNumber}}" />
+  <van-cell title="电话" value="{{UserPhoneNumber}}" />
+  <van-cell title="备注" value="{{notes}}" />
+  <van-cell title="份数" value="{{dishNumber}}" />
+  <van-cell title="当前状态" value="{{active?'等待接单':'已完成'}}" />
 </van-cell-group>
 <view class="MyButton">
-<van-button type="default" disabled>我要接单</van-button>
+<van-button type="default" disabled="{{!active}}" bind:click="fetchOrder">我要接单</van-button>
 </view>
+<van-toast id="van-toast"/>
 

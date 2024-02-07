@@ -20,6 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onSearch: function (event) {
+    console.log("This is search"+event.detail);
     wx.navigateTo({
       url: `/pages/searchResult/searchResult?searchItem=${event.detail}`,
     });

@@ -5,8 +5,15 @@ Page({
   },
 
   onLoad: function(options) {
-    this.searchDishes(this.data.searchItem); // 假设'searchItem'是您要搜索的关键词
+    // 假设从跳转链接获取的参数名是 searchItem
+    const searchItem = options.searchItem || ''; // 如果options中没有searchItem，默认为空字符串
+    console.log("This is " + searchItem);
+    this.setData({
+      searchItem: searchItem // 更新页面data中的searchItem
+    });
+    this.searchDishes(searchItem); // 使用获取的searchItem进行搜索
   },
+  
 
   // 搜索dishes集合中包含searchItem的记录
   searchDishes: function(searchItem) {

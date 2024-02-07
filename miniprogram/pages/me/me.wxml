@@ -15,7 +15,7 @@
   <view id="Information" class="FunctionBlock" bind:tap="toInformation">我的信息</view>
 </view> -->
 <van-grid column-num="2">
-  <van-grid-item icon="records-o" text="评分记录" bind:tap="toScoreRecords" />
+  <van-grid-item icon="records-o" text="我的评论" bind:tap="toScoreRecords" />
   <van-grid-item icon="bag-o" text="带饭记录" bind:tap="toMyTakeaway" />
   <van-grid-item icon="like-o" text="我的收藏" bind:tap="toFavorites" />
   <van-grid-item icon="chat-o" text="我的反馈" bind:tap="toFeedback" />

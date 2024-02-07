@@ -1,2 +1,7 @@
 <!--pages/favorites/favorites.wxml-->
-<recommendation/>
+<!-- 假设是在 page.wxml 中 -->
+<view>
+  <block wx:for="{{likes}}" wx:key="index">
+    <recommendation tag="{{item.tag}}"></recommendation>
+  </block>
+</view>

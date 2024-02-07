@@ -3,14 +3,14 @@
   <van-row class="NameAndImage">
     <van-col span="8">
       <view class="Container">
-        <image class="RecommendedDish" src="/images/avatar.jpg" />
+        <image class="RecommendedDish" src="{{DishImage}}" />
       </view>
     </van-col>
     <van-col span="6">
       <view class="Container">
         <view class="Name">
-          <text class="DishName">松鼠鱼</text>
-          <text class="CanteenName">玉湖食堂</text>
+          <text class="DishName">{{dishName}}</text>
+          <text class="CanteenName">{{canteenName}}</text>
         </view>
       </view>
     </van-col>
@@ -22,9 +22,9 @@
     <van-col span="6" class="Score">
       <view class="Container">
         <view class="Name">
-        <text class="Destination">玉湖宿舍7幢</text>
+        <text class="Destination">{{UserAddress}}</text>
         <text class="ScoreNumber">预期时间</text>
-        <text class="ScoreNumber">12:00</text>
+        <text class="ScoreNumber">{{expectedTime}}</text>
       </view>
       </view>
     </van-col>

@@ -1,5 +1,6 @@
 <!--pages/feedback/feedback.wxml-->
-<feedbackItem/>
-<feedbackItem/>
-<feedbackItem/>
-<feedbackItem/>
+<view>
+  <block wx:for="{{feedbackList}}" wx:key="sid">
+    <feedbackItem uid="{{item}}" />
+  </block>
+</view>

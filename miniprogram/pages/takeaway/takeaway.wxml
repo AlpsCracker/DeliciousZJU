@@ -3,34 +3,34 @@
   <van-tabs active="{{ active }}" bind:change="onChange">
     <van-tab title="帮我带份饭">
       <van-row>
-  <van-col span="5">
-    <van-sidebar active-key="{{ activeKey }}" bind:change="onChange2">
-      <van-sidebar-item title="玉湖餐厅"></van-sidebar-item>
-      <van-sidebar-item title="澄月餐厅"></van-sidebar-item>
-      <van-sidebar-item title="银泉餐厅"></van-sidebar-item>
-      <van-sidebar-item title="东区大食堂"></van-sidebar-item>
-      <van-sidebar-item title="麦香餐厅"></van-sidebar-item>
-      <van-sidebar-item title="麦斯威餐厅"></van-sidebar-item>
-      <van-sidebar-item title="临湖餐厅"></van-sidebar-item>
-    </van-sidebar>
-  </van-col>
-  <van-col span="19">
-    <view class="Container">
-      <block wx:for="{{activeTags}}" wx:key="uniqueKey">
-        <dishItem tag="{{item}}" redirectValue="2"></dishItem>
-      </block>
-    </view>
-  </van-col>
-</van-row>
-<van-toast id="van-toast"/>
+        <van-col span="5">
+          <van-sidebar active-key="{{ activeKey }}" bind:change="onChange2">
+            <van-sidebar-item title="玉湖餐厅"></van-sidebar-item>
+            <van-sidebar-item title="澄月餐厅"></van-sidebar-item>
+            <van-sidebar-item title="银泉餐厅"></van-sidebar-item>
+            <van-sidebar-item title="东区大食堂"></van-sidebar-item>
+            <van-sidebar-item title="麦香餐厅"></van-sidebar-item>
+            <van-sidebar-item title="麦斯威餐厅"></van-sidebar-item>
+            <van-sidebar-item title="临湖餐厅"></van-sidebar-item>
+          </van-sidebar>
+        </van-col>
+        <van-col span="19">
+          <view class="Container">
+            <block wx:for="{{activeTags}}" wx:key="uniqueKey">
+              <dishItem tag="{{item}}" redirectValue="2"></dishItem>
+            </block>
+          </view>
+        </van-col>
+      </van-row>
+      <van-toast id="van-toast" />
     </van-tab>
     <van-tab title="帮人带份饭">
-      <view style="display: flexbox;">
-        <takeawayRequest />
-        <takeawayRequest />
-        <takeawayRequest />
-        <takeawayRequest />
+      <view>
+        <block wx:for="{{takeawayRequests}}" wx:key="index">
+          <takeawayRequest sid="{{item._id}}"></takeawayRequest>
+        </block>
       </view>
+
     </van-tab>
   </van-tabs>
 </view>

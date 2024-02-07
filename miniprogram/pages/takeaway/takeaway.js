@@ -11,7 +11,8 @@ Page({
     active : 0,
     activeKey: 0,
     tagsInTotal: [],
-    activeTags: []
+    activeTags: [],
+    takeawayRequests: []
   },
   onChange(event) {
   },
@@ -57,8 +58,21 @@ Page({
     });
     console.log(this.data.tagsInTotal)
   },
+  fetchTakeawayRequests: function() {
+    db.collection('takeaways').where({
+      active: true // 查询条件：active为true
+    }).get().then(res => {
+      this.setData({
+        takeawayRequests: res.data
+      });
+      console.log(res.data)
+    }).catch(err => {
+      console.error("获取takeawayRequests失败", err);
+    });
+  },
   onLoad(options) {
     this.fetchData();
+    this.fetchTakeawayRequests();
     Toast.loading({
       message: '加载中...',
       forbidClick: true,

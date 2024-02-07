@@ -1,9 +1,11 @@
 <!--pages/takeawayRequestDetails/takeawayRequestDetails.wxml-->
 <recommendation tag="{{tag}}" wx:if="{{tag}}"/>
+<van-toast id="van-toast" />
 <van-cell-group inset>
-  <van-cell title="微信号" value="内容" />
-  <van-cell title="地址" value="内容" />
-  <van-cell title="电话" value="内容" />
+  <van-cell title="昵称" value="{{UserName}}" />
+  <van-cell title="微信号" value="{{UserWechatNumber}}" />
+  <van-cell title="地址" value="{{UserAddress}}" />
+  <van-cell title="电话" value="{{UserPhoneNumber}}" />
 </van-cell-group>
 <van-divider />
 <view class="Card">
@@ -19,5 +21,5 @@
   <van-field value="{{ value }}" placeholder="请输入期望时间" border="{{ false }}" bind:change="onChange3" />
 </view>
 <view class="MyButton">
-  <van-button type="default">发送</van-button>
+  <van-button type="default" bind:click="sendRequest">发送</van-button>
 </view>

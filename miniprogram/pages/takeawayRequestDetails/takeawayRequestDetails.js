@@ -1,11 +1,21 @@
 // pages/takeawayRequestDetails/takeawayRequestDetails.js
+const app = getApp()
+const db = wx.cloud.database();
+import Toast from '@vant/weapp/toast/toast';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tag:''
+    tag:'',
+    UserName: '',
+    UserWechatNumber: '',
+    UserAddress: '',
+    UserPhoneNumber: '',
+    dishNumber:1,
+    notes:'',
+    expectedTime:''
   },
 
   /**
@@ -19,11 +29,63 @@ Page({
     };
     console.log('This is tag')
     console.log(this.data.tag)
+    this.setData({
+      UserName: app.globalData.UserName,
+      UserWechatNumber: app.globalData.UserWechatNumber,
+      UserAddress: app.globalData.UserAddress,
+      UserPhoneNumber: app.globalData.UserPhoneNumber,
+    })
   },
-
+  onChange1(event)
+  {
+    console.log(event.detail)
+    this.setData({
+      dishNumber:event.detail
+    })
+  },
+  onChange2(event)
+  {
+    console.log(event.detail)
+    this.setData({
+      notes:event.detail
+    })
+  },
+  onChange3(event)
+  {
+    console.log(event.detail)
+    this.setData({
+      expectedTime:event.detail
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
+  sendRequest: function(e)
+  {
+    db.collection('takeaways').add({
+      data: {
+        tag: this.data.tag,
+        UserName: this.data.UserName,
+        UserWechatNumber: this.data.UserWechatNumber,
+        UserAddress: this.data.UserAddress,
+        UserPhoneNumber: this.data.UserPhoneNumber,
+        dishNumber: this.data.dishNumber,
+        notes: this.data.notes,
+        expectedTime: this.data.expectedTime,
+        active:true,
+        receiver:''
+      }
+    }).then(res => {
+      console.log('订单提交成功', res);
+      Toast.success({message: '提交成功', context: this});
+
+      // 处理提交成功的逻辑，比如提示用户、清空表单等
+    }).catch(err => {
+      console.error('订单提交失败', err);
+      // 处理错误情况
+      Toast({message: '提交失败', context: this});
+    });
+  },
   onReady() {
 
   },

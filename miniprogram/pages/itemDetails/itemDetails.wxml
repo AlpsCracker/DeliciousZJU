@@ -21,11 +21,10 @@
 
   </view>
   <writeComment tag="{{tag}}" />
-  <comment />
-  <comment />
-  <comment />
-  <comment />
+  <block wx:for="{{commentList}}" wx:key="sid">
+    <comment uid="{{item}}" />
+  </block>
 </view>
 <van-popup show="{{ show }}"position="bottom" custom-style="height: 20%" bind:close="onClose">
-<sendFeedback/>
+<sendFeedback tag="{{tag}}"/>
 </van-popup>
