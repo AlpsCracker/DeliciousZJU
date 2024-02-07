@@ -2,18 +2,18 @@
 <view class="Card" bind:tap="toDetail">
   <van-row class="NameAndImage">
     <van-col span="8">
-      <image class="RecommendedDish" src="/images/avatar.jpg" />
+      <image class="RecommendedDish" src="{{imageUrl}}" />
     </van-col>
     <van-col span="10">
       <view class="Name">
-        <text class="DishName">宫保鸡丁</text>
-        <text class="CanteenName">玉湖食堂</text>
+        <text class="DishName">{{dishName}}</text>
+        <text class="CanteenName">{{canteenName}}</text>
       </view>
     </van-col>
     <van-col span="6" class="Score">
-    <text class="ScoreValue">4.7</text>
-    <text class="ScoreNumber">50条评分</text>
+    <text class="ScoreValue">{{score}}</text>
+    <text class="ScoreNumber">{{scoreNumber}}条评分</text>
     </van-col>
   </van-row>
-  <van-rate class="MyRate" value="5" bind:change="onChange" readonly />
+  <van-rate class="MyRate" value="{{rateValue}}" bind:change="onChange" readonly />
 </view>

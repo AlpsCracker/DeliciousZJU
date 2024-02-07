@@ -13,10 +13,10 @@
   </van-col>
   <van-col span="19">
     <view class="Container">
-     <dishItem class="Item"></dishItem>
-     <dishItem class="Item"></dishItem>
-     <dishItem class="Item"></dishItem>
-     <dishItem class="Item"></dishItem>
+      <block wx:for="{{activeTags}}" wx:key="uniqueKey">
+        <dishItem tag="{{item}}"></dishItem>
+      </block>
     </view>
   </van-col>
 </van-row>
+<van-toast id="van-toast"/>

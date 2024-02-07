@@ -1,10 +1,10 @@
 <!--pages/information/information.wxml-->
-<image class="Avatar" src="/images/avatar.jpg" />
+<image class="Avatar" src="{{AvatarUrl}}" />
 <van-cell-group inset>
-  <van-cell title="昵称" value="内容"/>
-  <van-cell title="微信号" value="内容" />
-  <van-cell title="地址" value="内容"/>
-  <van-cell title="电话" value="内容"/>
+  <van-cell title="昵称" value="{{UserName}}"/>
+  <van-cell title="微信号" value="{{UserWechatNumber}}" />
+  <van-cell title="地址" value="{{UserAddress}}"/>
+  <van-cell title="电话" value="{{UserPhoneNumber}}"/>
 </van-cell-group>
 <view class="MyButton">
   <van-button type="default" bind:tap="toChange">修改个人信息</van-button>

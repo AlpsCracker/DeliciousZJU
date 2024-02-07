@@ -1,8 +1,11 @@
 <!--pages/me/me.wxml-->
 <view class="UserInformation">
-  <image class="UserAvatar" src="{{UserAvatarUrl}}" />
+  <image class="UserAvatar" src="{{AvatarUrl}}" />
   <!--van-image显示会有问题,此处使用image-->
-  <view class="UserNickname">{{UserName}}</view>
+  <view class="Container">
+    <view class="UserNickname">{{UserName}}</view>
+    <view class="UserWechatName">微信号:{{UserWechatNumber}}</view>
+  </view>
 </view>
 <!-- <view class="Functions">
   <view id="ScoreRecords" class="FunctionBlock" bind:tap="toScoreRecords">我的评分记录</view>
@@ -12,10 +15,10 @@
   <view id="Information" class="FunctionBlock" bind:tap="toInformation">我的信息</view>
 </view> -->
 <van-grid column-num="2">
-  <van-grid-item icon="records-o" text="评分记录" bind:tap="toScoreRecords"/>
-  <van-grid-item icon="bag-o" text="带饭记录" bind:tap="toMyTakeaway"/>
-  <van-grid-item icon="like-o" text="我的收藏" bind:tap="toFavorites"/>
-  <van-grid-item icon="chat-o" text="我的反馈" bind:tap="toFeedback"/>
-  <van-grid-item icon="good-job-o" text="我的点赞" bind:tap="toThumbs"/>
-  <van-grid-item icon="info-o" text="我的信息" bind:tap="toInformation"/>
+  <van-grid-item icon="records-o" text="评分记录" bind:tap="toScoreRecords" />
+  <van-grid-item icon="bag-o" text="带饭记录" bind:tap="toMyTakeaway" />
+  <van-grid-item icon="like-o" text="我的收藏" bind:tap="toFavorites" />
+  <van-grid-item icon="chat-o" text="我的反馈" bind:tap="toFeedback" />
+  <van-grid-item icon="good-job-o" text="我的点赞" bind:tap="toThumbs" />
+  <van-grid-item icon="info-o" text="我的信息" bind:tap="toInformation" />
 </van-grid>

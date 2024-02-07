@@ -2,10 +2,10 @@
 <view class="PageContent">
   <view class="Title">
     <van-toast id="van-toast" />
-    <image class="DishImage" src="/images/avatar.jpg"></image>
+    <image class="DishImage" src="{{imageUrl}}"></image>
     <view class="container">
-      <text class="DishName">松鼠鱼</text>
-      <text class="CanteenName">玉湖食堂</text>
+      <text class="DishName">{{dishName}}</text>
+      <text class="CanteenName">{{canteenName}}</text>
     </view>
     <view class="Icons">
       <van-icon size="25px" color="{{likeColor}}" name="like" bind:tap="changeLike" />
@@ -14,13 +14,13 @@
   </view>
   <view class="Score">
     <view class="container">
-      <text class="ScoreValue">4.7</text>
-      <text class="ScoreNumber">50条评分</text>
+      <text class="ScoreValue">{{score}}</text>
+      <text class="ScoreNumber">{{scoreNumber}}条评分</text>
     </view>
-    <van-rate class="MyRate" value="5" readonly/>
+    <van-rate class="MyRate" value="{{rateValue}}" readonly/>
 
   </view>
-  <writeComment />
+  <writeComment tag="{{tag}}" />
   <comment />
   <comment />
   <comment />

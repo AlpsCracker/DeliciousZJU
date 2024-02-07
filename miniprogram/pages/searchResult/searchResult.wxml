@@ -1,5 +1,6 @@
 <!--pages/searchResult/searchResult.wxml-->
-<recommendation/>
-<recommendation/>
-<recommendation/>
-<recommendation/>
+<view>
+  <block wx:for="{{tags}}" wx:key="*this">
+    <recommendation tag="{{item}}"></recommendation>
+  </block>
+</view>

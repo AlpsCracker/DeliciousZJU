@@ -1,5 +1,5 @@
 <!--pages/index/index.wxml-->
-<van-search value="{{ value }}" input-align="center" placeholder="搜索菜品"  bind:search="onSearch"/>
+<van-search value="{{searchItem}}" input-align="center" placeholder="搜索菜品" bind:search="onSearch" />
 
 <view style="display: flexbox; margin-bottom: 20%;">
   <view class="Table">
@@ -7,12 +7,10 @@
       <text class="TitleText">新品上市</text>
     </view>
     <view class="Cards">
-      <recommendation></recommendation>
-      <recommendation></recommendation>
-      <recommendation></recommendation>
-      <recommendation></recommendation>
-      <recommendation></recommendation>
-      <recommendation></recommendation>
+      <block wx:for="{{newDishesTags}}" wx:key="index">
+        <recommendation tag="{{item}}"></recommendation>
+      </block>
+
     </view>
   </view>
 
@@ -21,8 +19,9 @@
       <text class="TitleText">热门评分</text>
     </view>
     <view class="Cards">
-      <recommendation></recommendation>
-      <recommendation></recommendation>
+      <block wx:for="{{hotDishesTags}}" wx:key="index">
+        <recommendation tag="{{item}}"></recommendation>
+      </block>
     </view>
   </view>
 

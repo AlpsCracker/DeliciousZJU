@@ -1,20 +1,55 @@
-// app.js
 App({
+  globalData: {
+    AvatarUrl: '',
+    UserName: '',
+    UserWechatNumber: '',
+    UserAddress: '',
+    UserPhoneNumber: '',
+    openid: ''
+  },
+
   onLaunch: function () {
     if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+      console.error("请使用2.2.3或以上的基础库以使用云能力");
     } else {
       wx.cloud.init({
-        // env 参数说明：
-        //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
-        //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        //   如不填则使用默认环境（第一个创建的环境）
-        // env: 'my-env-id',
+        env: 'music-cloud-0gsnkc8jabc91db2',
         traceUser: true,
+      });
+      console.log("云服务设置完成");
+
+      // 获取并设置openid
+      wx.cloud.callFunction({
+        name: 'fetchOpenid',
+        success: res => {
+          console.log('用户的openid: ', res.result.openid);
+          this.globalData.openid = res.result.openid;
+          this.fetchUserDataAndUpdateGlobalData();
+        },
+        fail: console.error
       });
     }
   },
-  globalData: {
-    AvatarUrl: "/images/avatar.jpg",
-  },
+
+  fetchUserDataAndUpdateGlobalData: function() {
+    const db = wx.cloud.database();
+    const userCollection = db.collection('user');
+
+    userCollection.where({
+      _openid: this.globalData.openid
+    }).get().then(res => {
+      if (res.data.length > 0) {
+        let userData = res.data[0];
+        this.globalData.AvatarUrl = userData.AvatarUrl || '';
+        this.globalData.UserName = userData.UserName || '';
+        this.globalData.UserWechatNumber = userData.UserWechatNumber || '';
+        this.globalData.UserAddress = userData.UserAddress || '';
+        this.globalData.UserPhoneNumber = userData.UserPhoneNumber || '';
+      } else {
+        console.log('未找到用户数据');
+      }
+    }).catch(err => {
+      console.error('获取用户数据失败', err);
+    });
+  }
 });

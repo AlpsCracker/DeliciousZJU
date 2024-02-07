@@ -1,5 +1,5 @@
 <!--pages/takeawayRequestDetails/takeawayRequestDetails.wxml-->
-<recommendation />
+<recommendation tag="{{tag}}" wx:if="{{tag}}"/>
 <van-cell-group inset>
   <van-cell title="微信号" value="内容" />
   <van-cell title="地址" value="内容" />

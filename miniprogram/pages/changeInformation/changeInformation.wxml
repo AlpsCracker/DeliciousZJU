@@ -1,23 +1,24 @@
 <!--pages/changeInformation/changeInformation.wxml-->
 <van-button class="avatar-wrapper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">选择新头像</van-button>
-<image class="Avatar" src="/images/avatar.jpg" />
+<image class="Avatar" src="{{AvatarUrl}}" />
 <van-divider />
 <view class="Card">
   <text style="font-size: 14px; font-weight: 350; margin-left: 1%;">昵称</text>
-  <van-field value="{{ value }}" type="nickname" placeholder="请输入昵称" border="{{ false }}" bind:change="onChange2" />
+  <van-field value="{{UserName}}" type="nickname" placeholder="请输入昵称" border="{{ false }}" bind:change="onChangeUserName" />
 </view>
 <view class="Card">
   <text style="font-size: 14px; font-weight: 350; margin-left: 1%;">地址</text>
-  <van-field value="{{ value }}" placeholder="请输入地址" border="{{ false }}" bind:change="onChange2" />
+  <van-field value="{{ UserAddress }}" placeholder="请输入地址" border="{{ false }}" bind:change="onChangeUserAddress" />
 </view>
 <view class="Card">
   <text style="font-size: 14px; font-weight: 350; margin-left: 1%;">微信号</text>
-  <van-field value="{{ value }}" placeholder="请输入微信号" border="{{ false }}" bind:change="onChange3" />
+  <van-field value="{{ UserWechatNumber }}" placeholder="请输入微信号" border="{{ false }}" bind:change="onChangeUserWechatNumber" />
 </view>
 <view class="Card">
   <text style="font-size: 14px; font-weight: 350; margin-left: 1%;">手机号</text>
-  <van-field value="{{ value }}" placeholder="请输入电话" border="{{ false }}" bind:change="onChange3" />
+  <van-field value="{{ UserPhoneNumber }}" placeholder="请输入电话" border="{{ false }}" bind:change="onChangeUserPhoneNumber" />
 </view>
 <view class="MyButton">
-  <van-button type="default" bind:tap="toChange">保存</van-button>
+  <van-button type="default" bind:tap="toSave">保存</van-button>
 </view>
+<van-toast id="van-toast" />

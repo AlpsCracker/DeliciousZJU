@@ -1,66 +1,39 @@
-// pages/searchResult/searchResult.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    tags: [], // 用于存储所有标签的数组
+    searchItem:''
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad: function(options) {
+    this.searchDishes(this.data.searchItem); // 假设'searchItem'是您要搜索的关键词
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  // 搜索dishes集合中包含searchItem的记录
+  searchDishes: function(searchItem) {
+    console.log(searchItem)
+    const db = wx.cloud.database();
+    db.collection('dishes').where({
+      name: db.RegExp({
+        regexp: searchItem,
+        options: 'i', // 不区分大小写
+      })
+    }).get({
+      success: res => {
+        let tags = [];
+        res.data.forEach(dish => {
+          // 假设每个dish有一个tag字段
+          if (dish.tag && !tags.includes(dish.tag)) {
+            tags.push(dish.tag);
+          }
+        });
+        this.setData({
+          tags: tags
+        });
+        console.log(tags)
+      },
+      fail: err => {
+        console.error('查询失败', err);
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })

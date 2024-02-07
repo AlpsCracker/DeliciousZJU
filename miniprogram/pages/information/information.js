@@ -1,11 +1,16 @@
 // pages/information/information.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    AvatarUrl: '',
+    UserName:'',
+    UserWechatNumber:'',
+    UserAddress:'',
+    UserPhoneNumber:''
   },
 
   /**
@@ -18,7 +23,14 @@ Page({
     })
   },
   onLoad(options) {
-
+    this.setData(
+      {
+        AvatarUrl: app.globalData.AvatarUrl,
+        UserName:app.globalData.UserName,
+        UserWechatNumber:app.globalData.UserWechatNumber,
+        UserAddress:app.globalData.UserAddress,
+        UserPhoneNumber:app.globalData.UserPhoneNumber
+      })
   },
 
   /**
@@ -32,7 +44,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData(
+      {
+        AvatarUrl: app.globalData.AvatarUrl,
+        UserName:app.globalData.UserName,
+        UserWechatNumber:app.globalData.UserWechatNumber,
+        UserAddress:app.globalData.UserAddress,
+        UserPhoneNumber:app.globalData.UserPhoneNumber
+      })
   },
 
   /**

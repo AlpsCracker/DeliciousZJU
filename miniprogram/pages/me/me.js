@@ -8,9 +8,11 @@ Page({
    */
   
   data: {
-    UserAvatarUrl:"https://img.yzcdn.cn/vant/cat.jpeg",
-    UserName:"微信用户",
-    show: false
+    AvatarUrl: '',
+    UserName:'',
+    UserWechatNumber:'',
+    UserAddress:'',
+    UserPhoneNumber:''
   },
   showPopup() {
     this.setData({ show: true });
@@ -68,6 +70,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.setData(
+    {
+      AvatarUrl: app.globalData.AvatarUrl,
+      UserName:app.globalData.UserName,
+      UserWechatNumber:app.globalData.UserWechatNumber,
+      UserAddress:app.globalData.UserAddress,
+      UserPhoneNumber:app.globalData.UserPhoneNumber
+    })
   },
 
   /**

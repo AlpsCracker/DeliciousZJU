@@ -5,14 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tag:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    if (options.tag) {
+      this.setData({
+        tag: options.tag // 将页面的 tag 设置为 URL 参数中的值
+      })
+    };
+    console.log('This is tag')
+    console.log(this.data.tag)
   },
 
   /**

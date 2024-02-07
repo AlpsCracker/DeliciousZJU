@@ -1,12 +1,13 @@
 <!--components/writeComment/writeComment.wxml-->
 <view class="Card">
   <view class="Title">
-    <van-rate value="5" bind:change="onChange"></van-rate>
+    <van-rate value="{{rateValue}}" bind:change="onChangeRate"></van-rate>
   </view>
   <view class="Input">
-    <van-field  type="textarea" autosize placeholder="请输入您的评论" bind:change="onChange" custom-style="background-color:#f5f5f5;"></van-field>
+    <van-field  type="textarea" autosize placeholder="请输入您的评论" bind:change="onChangeComment" custom-style="background-color:#f5f5f5;"></van-field>
   </view>
   <view class="End">
+  {{tag}}
   <van-button type="default" size="small">发布</van-button>
   </view>
 </view>
